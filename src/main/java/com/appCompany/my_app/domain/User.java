@@ -15,26 +15,28 @@ import java.io.Serializable;
 @Entity
 @Table(name = "users")
 public class User extends AbstractAuditingEntity implements Serializable {
-    private static final long serialVersionUID = 1L;
 
-    @Id
-    private Long id;
+	private static final long serialVersionUID = 1L;
 
-    @JsonIgnore
-    @NotNull
-    @Size(min = 60, max = 60)
-    private String password;
+	@Id
+	private Long id;
 
-    @Size(max = 50)
-    private String firstName;
+	@JsonIgnore
+	@NotNull
+	@Size(min = 60, max = 60)
+	private String password;
 
-    @Size(max = 50)
-    private String lastName;
+	@Size(max = 50)
+	private String firstName;
 
-    @Email
-    @Size(min = 5, max = 254)
-    private String email;
+	@Size(max = 50)
+	private String lastName;
 
-    @NotNull
-    private boolean activated = false;
+	@Email
+	@Size(min = 5, max = 254)
+	private String email;
+
+	@NotNull
+	private boolean activated = false;
+
 }

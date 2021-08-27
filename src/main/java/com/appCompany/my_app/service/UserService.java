@@ -6,13 +6,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-    private UserRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+	private UserRepository userRepository;
 
-    public User getById(long id) {
-        return userRepository.findById(id);
-    }
+	public UserService(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+
+	public User getById(long id) {
+		return userRepository.findById(id);
+	}
+
 }

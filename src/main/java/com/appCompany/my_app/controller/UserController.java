@@ -11,15 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
-    private UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+	private UserService userService;
 
-    @GetMapping("/{id}")
-    public User getById(@PathVariable long id){
-        return userService.getById(id);
-    }
+	public UserController(UserService userService) {
+		this.userService = userService;
+	}
+
+	@GetMapping("/{id}")
+	public User getById(@PathVariable long id) {
+		return userService.getById(id);
+	}
 
 }

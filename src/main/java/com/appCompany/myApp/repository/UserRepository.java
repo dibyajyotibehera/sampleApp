@@ -1,6 +1,6 @@
-package com.appCompany.my_app.repository;
+package com.appCompany.myApp.repository;
 
-import com.appCompany.my_app.domain.User;
+import com.appCompany.myApp.domain.User;
 import org.springframework.stereotype.Repository;
 
 @Repository

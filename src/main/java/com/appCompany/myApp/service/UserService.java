@@ -1,7 +1,7 @@
-package com.appCompany.my_app.service;
+package com.appCompany.myApp.service;
 
-import com.appCompany.my_app.domain.User;
-import com.appCompany.my_app.repository.UserRepository;
+import com.appCompany.myApp.domain.User;
+import com.appCompany.myApp.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

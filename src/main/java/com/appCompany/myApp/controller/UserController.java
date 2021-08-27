@@ -1,8 +1,7 @@
-package com.appCompany.my_app.controller;
+package com.appCompany.myApp.controller;
 
-import com.appCompany.my_app.domain.User;
-import com.appCompany.my_app.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.appCompany.myApp.domain.User;
+import com.appCompany.myApp.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

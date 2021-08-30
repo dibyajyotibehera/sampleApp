@@ -15,7 +15,7 @@
 
 **TO-DO**
 
-- logging (structured logging)(aop logging)
+- logging (structured logging)(aop logging) (done - aspect4j/logback)
 - error handling - controller advice
 - base entity classes with audit fields (done)
 - rest clients

@@ -1,12 +1,10 @@
 spring:
+  application:
+    name : sampleApp
   datasource:
     url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5435/app}
     username: ${JDBC_DATABASE_USERNAME:app}
     password: ${JDBC_DATABASE_PASSWORD:app}
-  dbcp2:
-    max-wait-millis: 30000
-    validation-query: "SELECT 1"
-    validation-query-timeout: 30
   hikari:
     connectionTimeout: 20000
     maximumPoolSize: 5
@@ -22,7 +20,15 @@ spring:
             non_contextual_creation: true
         id:
           new_generator_mappings: true
+sleuth:
+  sampler:
+    probability: 1 # report 100% of traces
 
+logging:
+  level:
+#    ROOT: DEBUG
+    org.hibernate.SQL: DEBUG
+    com.appCompany.sampleApp: DEBUG
 
 springdoc:
   swagger-ui:

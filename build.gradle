@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id "io.spring.javaformat" version "0.0.27"
+    id "org.owasp.dependencycheck" version "6.2.2"
 }
 
 group = 'com.appCompany'

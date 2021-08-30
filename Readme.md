@@ -6,6 +6,7 @@
 3. swagger url - http://localhost:8080/swagger-ui/index.html?configUrl=/api-docs/swagger-config
 4. Format check - ./gradlew check 
 5. Fix format issues - ./gradlew format
+6. SAST check - ./gradlew dependencyCheckAnalyze
 
 **Prereq**
 

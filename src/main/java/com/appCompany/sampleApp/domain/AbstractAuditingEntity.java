@@ -6,6 +6,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.time.Instant;
 
@@ -13,6 +14,7 @@ import java.time.Instant;
  * Base abstract class for entities which will hold definitions for created, last
  * modified, created by, last modified by attributes.
  */
+@MappedSuperclass
 @Data
 public abstract class AbstractAuditingEntity implements Serializable {
 

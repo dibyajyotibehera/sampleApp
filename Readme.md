@@ -23,7 +23,7 @@
 - profile properties
 - code base structure
 - security config
-- SAST check
+- SAST check (done - org.owasp.dependencycheck)
 - health check 
 - Fault tolerance (resilience4j)
 - Distributed tracing system

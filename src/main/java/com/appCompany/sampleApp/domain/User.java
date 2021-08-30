@@ -1,11 +1,8 @@
-package com.appCompany.myApp.domain;
+package com.appCompany.sampleApp.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -18,13 +15,9 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id()
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-
-	@JsonIgnore
-	@NotNull
-	@Size(min = 60, max = 60)
-	private String password;
 
 	@Size(max = 50)
 	private String firstName;

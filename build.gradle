@@ -5,9 +5,9 @@ plugins {
     id "io.spring.javaformat" version "0.0.27"
 }
 
-group = 'io.bootify'
+group = 'com.appCompany'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '1.11'
 
 
 bootRun {

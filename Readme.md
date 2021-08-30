@@ -11,3 +11,25 @@
 
 1.Docker
 2.Java 11
+
+**TO-DO**
+
+- logging (structured logging)(aop logging)
+- error handling - controller advice
+- base entity classes with audit fields (done)
+- rest clients
+- db integration & data migration (liquibase) / cache config / pooling (done)
+- profile properties
+- code base structure
+- security config
+- SAST check
+- health check 
+- Fault tolerance (resilience4j)
+- Distributed tracing system
+- Spring Cloud Config Server
+- docker -docker compose
+- api versioning  ( done)
+- linting/code formatting  (done - spring java format)
+- code cov 
+- swagger (done)
+

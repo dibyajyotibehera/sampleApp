@@ -18,7 +18,7 @@
 - error handling - controller advice
 - base entity classes with audit fields (done)
 - rest clients
-- db integration & data migration (liquibase) / cache config / pooling (done)
+- db integration & data migration (flyway) / cache config / pooling (done)
 - profile properties
 - code base structure
 - security config

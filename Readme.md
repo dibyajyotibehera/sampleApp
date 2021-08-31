@@ -21,7 +21,7 @@
 - rest clients
 - db integration & data migration (flyway) / cache config / pooling (done)
 - profile properties
-- code base structure
+- code-base structure
 - security config
 - SAST check (done - org.owasp.dependencycheck)
 - health check 
@@ -29,8 +29,20 @@
 - Distributed tracing system
 - Spring Cloud Config Server
 - docker -docker compose
-- api versioning  ( done)
+- api versioning (done)
 - linting/code formatting  (done - spring java format)
-- code cov 
+- code cov
 - swagger (done)
-
+- authn
+- authz
+- filtering of index calls using Query DSL pattern?
+- pagination of index calls
+- pmd/cpd/checkstyle
+- CDCT
+- pipeline-as-code
+- unit tests with factories and faker
+- docker image publish on green build
+- docker image scanner
+- dockerized local dev with hot-reload?
+- Full-fledged `README.md` or `CONTRIBUTING.md` for new joiners to the codebase
+- release pipeline?

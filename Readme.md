@@ -24,7 +24,7 @@
 - code-base structure
 - security config
 - SAST check (done - org.owasp.dependencycheck)
-- health check 
+- healthcheck 
 - Fault tolerance (resilience4j)
 - Distributed tracing system
 - Spring Cloud Config Server
@@ -46,3 +46,6 @@
 - dockerized local dev with hot-reload?
 - Full-fledged `README.md` or `CONTRIBUTING.md` for new joiners to the codebase
 - release pipeline?
+- env-specific code
+- talisman / hawkeye / https://github.com/Yelp/detect-secrets
+- alerting/monitoring

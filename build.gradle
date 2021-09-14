@@ -4,6 +4,7 @@ plugins {
     id 'java'
     id "io.spring.javaformat" version "0.0.27"
     id "org.owasp.dependencycheck" version "6.2.2"
+    id "com.github.spotbugs" version "4.7.5"
 }
 
 group = 'com.appCompany'
@@ -31,6 +32,7 @@ dependencies {
     runtimeOnly('org.postgresql:postgresql')
     implementation('org.springdoc:springdoc-openapi-ui:1.5.2')
     compileOnly('org.projectlombok:lombok')
+    compileOnly('com.h3xstream.findsecbugs:findsecbugs-plugin:1.11.0')
     annotationProcessor('org.projectlombok:lombok')
     testCompileOnly('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
@@ -47,3 +49,9 @@ test {
     useJUnitPlatform()
 }
 
+spotbugsMain {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}

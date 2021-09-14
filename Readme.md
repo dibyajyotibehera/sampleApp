@@ -4,7 +4,7 @@
 
 2. ./gradlew clean build bootrun
 3. swagger url - http://localhost:8080/swagger-ui/index.html?configUrl=/api-docs/swagger-config
-4. Format check - ./gradlew check 
+4. Format/SAST check - ./gradlew check 
 5. Fix format issues - ./gradlew format
 6. SAST check - ./gradlew dependencyCheckAnalyze
 
@@ -23,7 +23,7 @@
 - profile properties
 - code-base structure
 - security config
-- SAST check (done - org.owasp.dependencycheck)
+- SAST check (done - org.owasp.dependencycheck/findbugs)
 - healthcheck 
 - Fault tolerance (resilience4j)
 - Distributed tracing system
@@ -37,7 +37,7 @@
 - authz
 - filtering of index calls using Query DSL pattern?
 - pagination of index calls
-- pmd/cpd/checkstyle
+- pmd/cpd/checkstyle - Done (added Findbugs/Findsecbugs)
 - CDCT
 - pipeline-as-code
 - unit tests with factories and faker

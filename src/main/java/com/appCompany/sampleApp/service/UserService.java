@@ -1,5 +1,7 @@
 package com.appCompany.sampleApp.service;
 
+import com.appCompany.sampleApp.client.UserClient;
+import com.appCompany.sampleApp.client.dto.ClientUserDTO;
 import com.appCompany.sampleApp.domain.User;
 import com.appCompany.sampleApp.repository.UserRepository;
 import com.appCompany.sampleApp.service.dto.UserDTO;
@@ -11,12 +13,18 @@ public class UserService {
 
 	private UserRepository userRepository;
 
-	public UserService(UserRepository userRepository) {
+	private UserClient userClient;
+
+	public UserService(UserRepository userRepository, UserClient userClient) {
 		this.userRepository = userRepository;
+		this.userClient = userClient;
 	}
 
 	public User getById(long id) {
-		return userRepository.findById(id).get();
+		User user = userRepository.findById(id).get();
+		ClientUserDTO clientUser = userClient.getUserById(id);
+		user.setPhoneNumber(clientUser.getPhone());
+		return user;
 	}
 
 	public User createUser(UserDTO user) {

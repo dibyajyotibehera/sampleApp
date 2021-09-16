@@ -34,4 +34,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 	@NotNull
 	private boolean activated = false;
 
+	@Transient
+	private String phoneNumber;
+
 }

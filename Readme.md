@@ -18,14 +18,14 @@
 - logging (structured logging)(aop logging) (done - aspect4j/logback)
 - error handling - controller advice
 - base entity classes with audit fields (done)
-- rest clients
+- rest clients (Feign -- done)
 - db integration & data migration (flyway) / cache config / pooling (done)
 - profile properties
 - code-base structure
 - security config
 - SAST check (done - org.owasp.dependencycheck/findbugs)
 - healthcheck 
-- Fault tolerance (resilience4j)
+- Fault tolerance (Hystrix -- done)
 - Distributed tracing system
 - Spring Cloud Config Server
 - docker -docker compose

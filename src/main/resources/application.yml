@@ -35,7 +35,8 @@ feign:
     enabled: true
   client:
     config:
-      default:
+      fakeUserClient:
+        url: https://jsonplaceholder.typicode.com/
         connectTimeout: 5000
         readTimeout: 5000
 

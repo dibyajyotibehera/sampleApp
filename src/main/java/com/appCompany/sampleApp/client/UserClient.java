@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "fakeUserClient", url = "https://jsonplaceholder.typicode.com/")
+@FeignClient(value = "fakeUserClient", url = "${feign.client.config.fakeUserClient.url}")
 public interface UserClient {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{userId}")

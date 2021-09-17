@@ -20,4 +20,12 @@ public class UserMapper {
 		return user;
 	}
 
+	public UserDTO userToUserDTO(User user) {
+		UserDTO userDTO = new UserDTO();
+		userDTO.setEmail(user.getEmail());
+		userDTO.setLastName(user.getLastName());
+		userDTO.setFirstName(user.getFirstName());
+		return userDTO;
+	}
+
 }

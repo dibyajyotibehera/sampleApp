@@ -1,7 +1,7 @@
 package com.appCompany.sampleApp.controller;
 
-import com.appCompany.sampleApp.domain.User;
 import com.appCompany.sampleApp.service.UserService;
+import com.appCompany.sampleApp.service.dto.UserDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -30,7 +29,7 @@ public class UserControllerTest {
 
 	@Test
 	public void shouldReturnCorrectUserGivenByService() throws Exception {
-		User alex = new User();
+		UserDTO alex = new UserDTO();
 		alex.setFirstName("alex");
 		given(userService.getById(1)).willReturn(alex);
 

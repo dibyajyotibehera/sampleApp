@@ -20,11 +20,11 @@ public class UserService {
 		this.userClient = userClient;
 	}
 
-	public User getById(long id) {
+	public UserDTO getById(long id) {
 		User user = userRepository.findById(id).get();
 		ClientUserDTO clientUser = userClient.getUserById(id);
 		user.setPhoneNumber(clientUser.getPhone());
-		return user;
+		return (new UserMapper().userToUserDTO(user));
 	}
 
 	public User createUser(UserDTO user) {

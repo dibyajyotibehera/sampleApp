@@ -2,6 +2,8 @@ package com.appCompany.sampleApp.controller;
 
 import com.appCompany.sampleApp.service.UserService;
 import com.appCompany.sampleApp.service.dto.UserDTO;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -38,7 +41,23 @@ public class UserControllerTest {
 	}
 
 	@Test
-	void createUser() {
+	public void shouldCreateUser() throws Exception {
+		UserDTO alex = new UserDTO();
+		alex.setFirstName("alex");
+
+		given(userService.createUser(alex)).willReturn(alex);
+		mvc.perform(post("/api/v1/users").contentType(MediaType.APPLICATION_JSON).content(asJsonString(alex)))
+				.andExpect(status().isCreated()).andExpect(jsonPath("$.firstName", is(alex.getFirstName())));
+
+	}
+
+	public static String asJsonString(final Object obj) {
+		try {
+			return new ObjectMapper().writeValueAsString(obj);
+		}
+		catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 }

@@ -3,6 +3,7 @@ package com.appCompany.sampleApp.controller;
 import com.appCompany.sampleApp.domain.User;
 import com.appCompany.sampleApp.service.UserService;
 import com.appCompany.sampleApp.service.dto.UserDTO;
+import org.springframework.cloud.util.ConditionalOnBootstrapDisabled;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,9 +27,9 @@ public class UserController {
 		return ResponseEntity.ok().body(user);
 	}
 
-	@PostMapping("/users")
-	public ResponseEntity<User> createUser(@Valid @RequestBody UserDTO user) {
-		User savedUser = userService.createUser(user);
+	@PostMapping()
+	public ResponseEntity<UserDTO> createUser(@Valid @RequestBody UserDTO user) {
+		UserDTO savedUser = userService.createUser(user);
 		try {
 			return ResponseEntity.created(new URI("/api/v1/users")).body(savedUser);
 		}

@@ -25,6 +25,10 @@ public class ClientUserDTO {
 		return this.phone;
 	}
 
+    public void setPhone(String phone) {
+         this.phone = phone;
+    }
+
 }
 
 @SuppressFBWarnings(value = "UUF_UNUSED_FIELD")

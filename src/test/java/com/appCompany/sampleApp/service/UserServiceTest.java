@@ -21,37 +21,39 @@ import static org.mockito.BDDMockito.given;
 @ExtendWith(SpringExtension.class)
 class UserServiceTest {
 
-    @MockBean
-    private UserRepository userRepository;
+	@MockBean
+	private UserRepository userRepository;
 
-    @MockBean
-    private UserClient userClient;
+	@MockBean
+	private UserClient userClient;
 
-    @TestConfiguration
-    static class UserServiceTestContextConfiguration {
-        @Bean
-        public UserService userService(UserRepository userRepository,UserClient userClient) {
-            return new UserService(userRepository,userClient);
-        }
-    }
+	@TestConfiguration
+	static class UserServiceTestContextConfiguration {
 
-    @Autowired
-    private UserService userService;
+		@Bean
+		public UserService userService(UserRepository userRepository, UserClient userClient) {
+			return new UserService(userRepository, userClient);
+		}
 
+	}
 
-    @Test
-    void shouldReturnCorrectUser() {
-        User alex = new User();
-        alex.setFirstName("alex");
-        ClientUserDTO extraInfo = new ClientUserDTO();
-        extraInfo.setPhone("1-770-736-8031 x56442");
+	@Autowired
+	private UserService userService;
 
-        given(userRepository.findById(1L)).willReturn(Optional.of(alex));
-        given(userClient.getUserById(1L)).willReturn(extraInfo);
+	@Test
+	void shouldReturnCorrectUser() {
+		User alex = new User();
+		alex.setFirstName("alex");
+		ClientUserDTO extraInfo = new ClientUserDTO();
+		extraInfo.setPhone("1-770-736-8031 x56442");
 
-        UserDTO byId = userService.getById(1);
-        assertEquals( "1-770-736-8031 x56442", byId.getPhoneNumber(),"got wrong phone num");
-        assertEquals( "alex", byId.getFirstName(),"got wrong name");
+		given(userRepository.findById(1L)).willReturn(Optional.of(alex));
+		given(userClient.getUserById(1L)).willReturn(extraInfo);
 
-    }
+		UserDTO byId = userService.getById(1);
+		assertEquals("1-770-736-8031 x56442", byId.getPhoneNumber(), "got wrong phone num");
+		assertEquals("alex", byId.getFirstName(), "got wrong name");
+
+	}
+
 }

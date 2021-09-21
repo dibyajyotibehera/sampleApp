@@ -17,21 +17,21 @@
 
 - logging (structured logging)(aop logging) (done - aspect4j/logback)
 - error handling - controller advice
+- Testing - (done - spring-boot-test,mockito,jacoco,arch-unit)
 - base entity classes with audit fields (done)
 - rest clients (Feign -- done)
-- db integration & data migration (flyway) / cache config / pooling (done)
+- db integration & data migration (flyway - done) / pooling (done)
 - profile properties
 - code-base structure
 - security config
 - SAST check (done - org.owasp.dependencycheck/findbugs)
 - healthcheck 
 - Fault tolerance (Hystrix -- done)
-- Distributed tracing system
+- Distributed tracing system (done - spring cloud sleuth)
 - Spring Cloud Config Server
 - docker -docker compose
 - api versioning (done)
 - linting/code formatting  (done - spring java format)
-- code cov
 - swagger (done)
 - authn
 - authz
@@ -40,7 +40,6 @@
 - pmd/cpd/checkstyle - Done (added Findbugs/Findsecbugs)
 - CDCT
 - pipeline-as-code
-- unit tests with factories and faker
 - docker image publish on green build
 - docker image scanner
 - dockerized local dev with hot-reload?

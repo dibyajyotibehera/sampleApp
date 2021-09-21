@@ -6,6 +6,7 @@ plugins {
     id "org.owasp.dependencycheck" version "6.2.2"
     id "com.github.spotbugs" version "4.7.5"
     id "jacoco"
+    id "org.flywaydb.flyway" version "7.15.0"
 }
 
 group = 'com.appCompany'
@@ -88,4 +89,11 @@ spotbugsTest {
         xml.enabled = false
         html.enabled = true
     }
+}
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5435/app'
+    user = 'app'
+    password = 'app'
+    baselineOnMigrate = true
 }

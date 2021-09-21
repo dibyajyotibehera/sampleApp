@@ -8,10 +8,9 @@ spring:
   hikari:
     connectionTimeout: 20000
     maximumPoolSize: 5
-#drop n create table again, good for testing, comment this in production
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     open-in-view: false
     properties:
       hibernate:
@@ -24,11 +23,11 @@ sleuth:
   sampler:
     probability: 1 # report 100% of traces
 
-logging:
-  level:
+#logging:
+#  level:
 #    ROOT: DEBUG
-    org.hibernate.SQL: DEBUG
-    com.appCompany.sampleApp: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    com.appCompany.sampleApp: DEBUG
 
 feign:
   hystrix:

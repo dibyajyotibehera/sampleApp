@@ -53,8 +53,6 @@ public class ExceptionTranslator implements ProblemHandling {
             return entity;
         }
 
-        HttpServletRequest nativeRequest = request.getNativeRequest(HttpServletRequest.class);
-        String requestUri = nativeRequest != null ? nativeRequest.getRequestURI() : StringUtils.EMPTY;
         ProblemBuilder builder = Problem.builder().withStatus(problem.getStatus()).withTitle(problem.getTitle());
 
         if (problem instanceof ConstraintViolationProblem) {

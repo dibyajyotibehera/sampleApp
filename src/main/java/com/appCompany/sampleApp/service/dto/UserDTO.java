@@ -8,17 +8,17 @@ import javax.validation.constraints.Size;
 @Data
 public class UserDTO {
 
-	@Size(max = 50)
-	private String firstName;
+    @Size(max = 50)
+    private String firstName;
 
-	@Size(max = 50)
-	private String lastName;
+    @Size(max = 50)
+    private String lastName;
 
-	@Email
-	@Size(min = 5, max = 254)
-	private String email;
+    @Email
+    @Size(min = 5, max = 254)
+    private String email;
 
-	@Size(max = 50)
-	private String phoneNumber;
+    @Size(max = 50)
+    private String phoneNumber;
 
 }

@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Import;
 @Import(FeignClientsConfiguration.class)
 public class FeignConfiguration {
 
-	/**
-	 * Set the Feign specific log level to log client REST requests.
-	 */
-	@Bean
-	feign.Logger.Level feignLoggerLevel() {
-		return feign.Logger.Level.BASIC;
-	}
+    /**
+     * Set the Feign specific log level to log client REST requests.
+     */
+    @Bean
+    feign.Logger.Level feignLoggerLevel() {
+        return feign.Logger.Level.BASIC;
+    }
 
 }

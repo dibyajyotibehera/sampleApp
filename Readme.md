@@ -4,8 +4,7 @@
 
 2. ./gradlew clean build bootrun
 3. swagger url - http://localhost:8080/swagger-ui/index.html?configUrl=/api-docs/swagger-config
-4. Format/SAST(FIndbugs) check - ./gradlew check 
-5. Fix format issues - ./gradlew format
+4. Format/SAST(FIndbugs) check - ./gradlew check
 6. dependency checker - ./gradlew dependencyCheckAnalyze
 
 **Prereq**
@@ -31,7 +30,7 @@
 - Spring Cloud Config Server
 - docker -docker compose
 - api versioning (done)
-- linting/code formatting  (done - spring java format)
+- linting/code formatting  (done - checkstyle)
 - swagger (done)
 - authn
 - authz

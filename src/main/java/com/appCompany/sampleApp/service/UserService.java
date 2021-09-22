@@ -11,25 +11,25 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-	private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-	private UserClient userClient;
+    private final UserClient userClient;
 
-	public UserService(UserRepository userRepository, UserClient userClient) {
-		this.userRepository = userRepository;
-		this.userClient = userClient;
-	}
+    public UserService(UserRepository userRepository, UserClient userClient) {
+        this.userRepository = userRepository;
+        this.userClient = userClient;
+    }
 
-	public UserDTO getById(long id) {
-		User user = userRepository.findById(id).get();
-		ClientUserDTO clientUser = userClient.getUserById(id);
-		user.setPhoneNumber(clientUser.getPhone());
-		return (new UserMapper().userToUserDTO(user));
-	}
+    public UserDTO getById(long id) {
+        User user = userRepository.findById(id).get();
+        ClientUserDTO clientUser = userClient.getUserById(id);
+        user.setPhoneNumber(clientUser.getPhone());
+        return (new UserMapper().userToUserDTO(user));
+    }
 
-	public UserDTO createUser(UserDTO user) {
-		User savedUser = userRepository.save(new UserMapper().userDTOToUser(user));
-		return (new UserMapper().userToUserDTO(savedUser));
-	}
+    public UserDTO createUser(UserDTO user) {
+        User savedUser = userRepository.save(new UserMapper().userDTOToUser(user));
+        return (new UserMapper().userToUserDTO(savedUser));
+    }
 
 }

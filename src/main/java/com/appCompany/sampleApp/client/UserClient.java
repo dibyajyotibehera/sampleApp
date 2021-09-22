@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "fakeUserClient", url = "${feign.client.config.fakeUserClient.url}")
 public interface UserClient {
 
-	@RequestMapping(method = RequestMethod.GET, value = "/users/{userId}")
-	ClientUserDTO getUserById(@PathVariable("userId") Long userId);
+    @RequestMapping(method = RequestMethod.GET, value = "/users/{userId}")
+    ClientUserDTO getUserById(@PathVariable("userId") Long userId);
 
 }
